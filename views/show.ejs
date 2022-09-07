@@ -6,7 +6,20 @@
 </head>
 
 <body>
-
+  <nav>
+    <a href="/products">Back to Products Page</a>
+  </nav>
+  <h1>
+    <%=product.name %>
+  </h1>
+  Description: <%= product.description%>
+    <br />
+    <img src=<%=product.img%> alt="product picture"/>
+    <br />
+    Price: <%= product.price%>
+      <br />
+      Qty: <%= product.quantity%>
+        <br />
 </body>
 
 </html>
