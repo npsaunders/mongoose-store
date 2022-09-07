@@ -6,19 +6,21 @@
 </head>
 
 <body>
-  <nav>
-    <a href="/products/new">Add a New Product</a>
-  </nav>
-  <h1>Products</h1>
-  <ul>
-    <% products.forEach(product=> { %>
-      <li>
-        <a href="/products/<%=product._id %>">
-          <img src=<%=product.img%> %>
-        </a>
-      </li>
-      <% }) %>
-  </ul>
+  <div class="container">
+    <nav>
+      <a href="/products/new">Add a New Product</a>
+    </nav>
+    <h1 class="indexPage">Mongoose</h1>
+    <ul>
+      <% products.forEach(product=> { %>
+        <li>
+          <a href="/products/<%=product._id %>">
+            <img src=<%=product.img%> %>
+          </a>
+        </li>
+        <% }) %>
+    </ul>
+  </div>
 </body>
 
 </html>

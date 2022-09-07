@@ -6,20 +6,39 @@
 </head>
 
 <body>
-  <nav>
-    <a href="/products">Back to Products Page</a>
-  </nav>
-  <h1>
-    <%=product.name %>
-  </h1>
-  Description: <%= product.description%>
-    <br />
-    <img src=<%=product.img%> alt="product picture"/>
-    <br />
-    Price: <%= product.price%>
+  <div class="container">
+    <nav>
+      <a href="/products">Back to Products Page</a>
+    </nav>
+    <h1>
+      <%=product.name %>
+    </h1>
+    <button><a href="/products/:id/edit">Edit</a></button>
+    <form action="/products/<%=product._id%>?_method=DELETE" method="POST" style="display:inline;margin-left:10px">
+      <input type="submit" value="Delete">
+    </form><br />
+    Description: <%= product.description%>
       <br />
-      Qty: <%= product.qty%>
-        <br />
+      <img src=<%=product.img%> alt="product picture"/>
+
+      <%if (product.qty> 0) {%>
+        <!-- Buy Button  Only if qty > 0 -->
+        <!-- Need to figure out how to reduce qty by 1 -->
+        <form action="/products/<%=product._id%>?_method=PUT" method="POST" style="display:inline;margin-left:10px">
+          <input type="submit" value="BUY!">
+        </form>
+        <%} else {%>
+          OUT OF STOCK!
+          <%}%>
+            <!-- ******************************** -->
+            <br />
+            Price: <%= product.price%>
+              <br />
+              Qty: <%= product.qty%>
+                <br />
+
+
+  </div>
 </body>
 
 </html>
