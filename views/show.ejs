@@ -13,13 +13,13 @@
     <h1>
       <%=product.name %>
     </h1>
-    <button><a href="/products/:id/edit">Edit</a></button>
+    <button><a href="/products/<%=product._id %>/edit">Edit</a></button>
     <form action="/products/<%=product._id%>?_method=DELETE" method="POST" style="display:inline;margin-left:10px">
       <input type="submit" value="Delete">
     </form><br />
     Description: <%= product.description%>
       <br />
-      <img src=<%=product.img%> alt="product picture"/>
+      <img src="<%=product.img %>" alt="product picture" />
 
       <%if (product.qty> 0) {%>
         <!-- Buy Button  Only if qty > 0 -->
