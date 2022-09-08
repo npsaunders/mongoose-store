@@ -7,16 +7,13 @@
 
 <body>
   <div class="container">
-    <nav>
-      <a href="/products">Back to Products Page</a>
-    </nav>
     <h1>
       <%=product.name %>
-    </h1>
-    <button><a href="/products/<%=product._id %>/edit">Edit</a></button>
-    <form action="/products/<%=product._id%>?_method=DELETE" method="POST" style="display:inline;margin-left:10px">
-      <input type="submit" value="Delete">
-    </form><br />
+    </h1><button>
+      <a href="/products">Back to Products Page</a>
+    </button>
+    <br />
+
     Description: <%= product.description%>
       <br />
       <img src="<%=product.img %>" alt="product picture" />
@@ -36,6 +33,11 @@
               <br />
               Qty: <%= product.qty%>
                 <br />
+                <button><a href="/products/<%=product._id %>/edit">Edit</a></button>
+                <form action="/products/<%=product._id%>?_method=DELETE" method="POST"
+                  style="display:inline;margin-left:10px">
+                  <input type="submit" value="Delete">
+                </form><br />
 
 
   </div>
