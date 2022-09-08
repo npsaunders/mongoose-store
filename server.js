@@ -111,6 +111,18 @@ app.get("/products/:id/edit", (req, res) => {
   });
 });
 
+// This will be used to reduce the quantity by 1 each time the buy button is pressed
+// BUY
+app.put("/products/:id/buy", (req, res) => {
+  Product.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  }, (error, updatedProduct) => {
+    updatedProduct.qty -= 1;
+    updatedProduct.save();
+    res.redirect(`/products/${req.params.id}`);
+  });
+});
+
 // SHOW
 app.get('/products/:id', (req, res) => {
   Product.findById(req.params.id, (error, foundProduct) => {
