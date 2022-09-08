@@ -13,8 +13,9 @@
       <a href="/products">Back to Products Page</a>
     </button>
     <br />
+    <br />
 
-    Description: <%= product.description%>
+    Description: <%=product.description %>
       <br />
       <img src="<%=product.img %>" alt="product picture" />
 
@@ -34,6 +35,7 @@
               Qty: <%= product.qty%>
                 <br />
                 <button><a href="/products/<%=product._id %>/edit">Edit</a></button>
+
                 <form action="/products/<%=product._id%>?_method=DELETE" method="POST"
                   style="display:inline;margin-left:10px">
                   <input type="submit" value="Delete">

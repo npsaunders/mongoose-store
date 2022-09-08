@@ -7,7 +7,6 @@
 
 <body>
   <div class="container">
-
     <h1 class="indexPage">The Mongoose Store</h1><button><a href="/products/new">Add a New Product</a></button>
 
     <ul>
@@ -15,10 +14,12 @@
         <li>
           <a href="/products/<%=product._id %>">
             <img src=<%=product.img%> %>
-          </a><br />
-          Price:<%= product.price %> <br />
-            Qty: <%= product.qty %>
         </li>
+        <div class="product">
+          Name: <%= product.name %> <br />
+            Price:<%= product.price %> <br />
+              Qty: <%= product.qty %></a><br /><br /><br />
+        </div>
         <% }) %>
     </ul>
   </div>

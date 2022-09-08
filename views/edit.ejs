@@ -8,9 +8,8 @@
 <body>
   <form action="/products/<%= product._id %>?_method=PUT" method="POST">
     Name: <input type="text" name="name" value=<%=product.name %> /><br />
-    Description: <textarea name="Description" cols="40" rows="5">
-      <%=product.description %>
-    </textarea><br />
+    Description: <input type="text" name="description" value="<%=product.description %>">
+    <br />
     Image: <input type="text" name="img" value=<%=product.img %> /><br />
     Price: <input type="number" name="price" placeholder="0.00" min="0" step="0.01" value=<%=product.price %> /><br />
     Qty: <input type="number" name="qty" placeholder="0" min="0" value=<%=product.qty %> /><br />
